@@ -1,10 +1,10 @@
 ﻿using Azure.Messaging.ServiceBus;
 
-string _connectionString = "Endpoint=sb://az204-svcbuslnalmeida.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=+8CR70ofcf2igz8US+7OA1TJbOhg9uMZp+ASbCDc/2s=";
-string _ququeName = "az204queue";
+string connectionString = "";
+string queueName = "az204queue";
 
 ServiceBusClient client = new ServiceBusClient(_connectionString);
-ServiceBusSender sender = client.CreateSender(_ququeName);
+ServiceBusSender sender = client.CreateSender(_queueName);
 
 using ServiceBusMessageBatch messageBatch = await sender.CreateMessageBatchAsync();
 
